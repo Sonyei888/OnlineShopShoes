@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "381030936669",
+    "project_id": "onlineshopshoes-34bac",
+    "storage_bucket": "onlineshopshoes-34bac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381030936669:android:874d2c1c5c5e0f42e09db4",
+        "android_client_info": {
+          "package_name": "com.sonyei888.onlineshopshoes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASCbh688X4Js_odcuO8s0BIlJqZk04jks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
