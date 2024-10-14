@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures{
+        viewBinding=true
+    }
 }
 
 dependencies {
@@ -48,9 +51,20 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //lifecycle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.2")
 
+    //viewModel
+    implementation("androidx.activity:activity-ktx:1.4.0")
 
     //Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
     implementation("com.google.firebase:firebase-analytics")
+
+    implementation("com.github.bumptech.glide:glide:4.12.8")
+    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("com.tbuonomo:dotsindicator:5.0")
+
 }
