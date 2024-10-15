@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
-                android:background="@drawable/puple_button_bg"
+                android:background="@drawable/puple_bg"
                 android:text="Let´s Get Started"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
