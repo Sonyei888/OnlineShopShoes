@@ -10,7 +10,7 @@ import com.sonyei888.onlineshopshoes.MainActivity
 import com.sonyei888.onlineshopshoes.R
 import com.sonyei888.onlineshopshoes.databinding.ActivityIntroBinding
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
 
     private lateinit var binding: ActivityIntroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
