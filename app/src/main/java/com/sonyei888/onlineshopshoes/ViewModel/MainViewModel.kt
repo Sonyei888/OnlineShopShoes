@@ -12,7 +12,7 @@ import com.sonyei888.onlineshopshoes.model.SliderModel
 class MainViewModel():ViewModel() {
     private val firebaseDatabase= FirebaseDatabase.getInstance()
     private val _banner=MutableLiveData<List<SliderModel>>()
-    private val banners: LiveData<List<SliderModel>> = _banner
+    val banners: LiveData<List<SliderModel>> = _banner
 
     fun loadBanners(){
         val Ref=firebaseDatabase.getReference("Banner")
