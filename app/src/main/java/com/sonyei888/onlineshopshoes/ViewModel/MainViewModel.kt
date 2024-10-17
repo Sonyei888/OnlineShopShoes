@@ -17,8 +17,10 @@ class MainViewModel():ViewModel() {
 
     private val _banner=MutableLiveData<List<SliderModel>>()
     private val _brand = MutableLiveData<MutableList<BrandModel>>()
+    private val _popular = MutableLiveData<MutableList<ItemModel>>()
 
     val banners: LiveData<List<SliderModel>> = _banner
+    val popular: LiveData<MutableList<ItemModel>> = _popular
     val brands: LiveData<MutableList<BrandModel>> = _brand
 
     fun loadBanners(){
@@ -64,12 +66,12 @@ class MainViewModel():ViewModel() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val lists = mutableListOf<ItemModel>()
                 for (childSnapshot in snapshot.children){
-                    val list = childSnapshot.getValue(BrandModel::class.java)
+                    val list = childSnapshot.getValue(ItemModel::class.java)
                     if (list != null){
                         lists.add(list)
                     }
                 }
-                _brand.value=lists
+                _popular.value=lists
             }
 
             override fun onCancelled(error: DatabaseError) {

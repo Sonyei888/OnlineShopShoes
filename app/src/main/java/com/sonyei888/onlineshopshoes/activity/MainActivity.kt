@@ -3,11 +3,13 @@ package com.sonyei888.onlineshopshoes.activity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.sonyei888.onlineshopshoes.Adapter.BrandAdapter
+import com.sonyei888.onlineshopshoes.Adapter.PopularAdapter
 import com.sonyei888.onlineshopshoes.Adapter.SliderAdapter
 import com.sonyei888.onlineshopshoes.ViewModel.MainViewModel
 import com.sonyei888.onlineshopshoes.databinding.ActivityMainBinding
@@ -25,6 +27,7 @@ class MainActivity : BaseActivity() {
 
         initBanner()
         initBrand()
+        initPopular()
     }
 
     private fun initBanner() {
@@ -62,5 +65,15 @@ class MainActivity : BaseActivity() {
             binding.progressBarBrand.visibility = View.GONE
         })
         viewModel.loadBrand()
+    }
+
+    private fun initPopular() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.popular.observe(this, Observer {
+            binding.viewPopular.layoutManager = GridLayoutManager(this@MainActivity, 2)
+            binding.viewPopular.adapter = PopularAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
+        })
+        viewModel.loadPupolar()
     }
 }
