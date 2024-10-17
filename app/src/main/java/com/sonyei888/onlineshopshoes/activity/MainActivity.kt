@@ -2,16 +2,11 @@ package com.sonyei888.onlineshopshoes.activity
 
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
-import com.sonyei888.onlineshopshoes.R
-import com.sonyei888.onlineshopshoes.SliderAdapter
+import com.sonyei888.onlineshopshoes.Adapter.SliderAdapter
 import com.sonyei888.onlineshopshoes.ViewModel.MainViewModel
 import com.sonyei888.onlineshopshoes.databinding.ActivityMainBinding
 import com.sonyei888.onlineshopshoes.model.SliderModel

@@ -1,16 +1,16 @@
-package com.sonyei888.onlineshopshoes
+package com.sonyei888.onlineshopshoes.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RemoteViews.RemoteCollectionItems
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.request.RequestOptions
+import com.sonyei888.onlineshopshoes.R
 import com.sonyei888.onlineshopshoes.model.SliderModel
 
 class SliderAdapter(
