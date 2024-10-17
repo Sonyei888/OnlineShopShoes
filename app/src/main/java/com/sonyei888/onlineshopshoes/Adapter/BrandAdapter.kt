@@ -20,11 +20,12 @@ class BrandAdapter(val items: MutableList<BrandModel>) :
     private var lastSelectedPosition = -1
     private lateinit var context: Context
 
-    class Viewholder(val binding: ViewholderBrandBinding) : RecyclerView.ViewHolder(binding.root) {
+    class Viewholder(val binding: ViewholderBrandBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrandAdapter.Viewholder {
         context = parent.context
         val binding = ViewholderBrandBinding.inflate(LayoutInflater.from(context), parent, false)
         return Viewholder(binding)
@@ -47,7 +48,15 @@ class BrandAdapter(val items: MutableList<BrandModel>) :
 
         holder.binding.title.setTextColor(context.resources.getColor(R.color.white))
         if (selectedPosition == position) {
-            holder.binding.pic.setBackgroundColor(0)
+            holder.binding.pic.setBackgroundResource(0)
+            holder.binding.mailLayout.setBackgroundResource(R.drawable.puple_bg)
+            ImageViewCompat.setImageTintList(
+                holder.binding.pic,
+                ColorStateList.valueOf(context.getColor(R.color.white))
+            )
+            holder.binding.title.visibility = View.VISIBLE
+        } else {
+            holder.binding.pic.setBackgroundResource(R.drawable.grey_bg)
             holder.binding.mailLayout.setBackgroundResource(0)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
