@@ -21,8 +21,7 @@ class ColorAdapter(val items: MutableList<String>) :
     private var lastSelectedPosition = -1
     private lateinit var context: Context
 
-    class Viewholder(val binding: ViewholderColorBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class Viewholder(val binding: ViewholderColorBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 
@@ -33,11 +32,8 @@ class ColorAdapter(val items: MutableList<String>) :
     }
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
-        val item = items[position]
 
-        Glide.with(holder.itemView.context)
-            .load(items[position])
-            .into(holder.binding.pic)
+        Glide.with(holder.itemView.context).load(items[position]).into(holder.binding.pic)
 
         holder.binding.root.setOnClickListener {
             lastSelectedPosition = selectedPosition
@@ -49,7 +45,7 @@ class ColorAdapter(val items: MutableList<String>) :
 
         if (selectedPosition == position) {
 
-            holder.binding.colorLayout.setBackgroundResource(R.drawable.puple_bg)
+            holder.binding.colorLayout.setBackgroundResource(R.drawable.grey_bg_selected)
 
         } else {
             holder.binding.colorLayout.setBackgroundResource(R.drawable.grey_bg)
