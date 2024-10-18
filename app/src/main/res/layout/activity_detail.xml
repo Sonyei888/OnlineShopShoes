@@ -8,7 +8,6 @@
     tools:context=".activity.DetailActivity">
 
     <ScrollView
-        android:id="@+id/ratingTxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
