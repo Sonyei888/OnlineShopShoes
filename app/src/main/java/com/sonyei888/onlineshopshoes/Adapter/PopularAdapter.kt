@@ -1,12 +1,14 @@
 package com.sonyei888.onlineshopshoes.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
+import com.sonyei888.onlineshopshoes.activity.DetailActivity
 import com.sonyei888.onlineshopshoes.databinding.ViewholderRecommendedBinding
 import com.sonyei888.onlineshopshoes.model.ItemsModel
 
@@ -36,9 +38,11 @@ class PopularAdapter(val items: MutableList<ItemsModel>) :
             .apply(requestOptions)
             .into(holder.binding.pic)
 
-        /*holder.itemView.setOnClickListener {
-            val intent=Intent(holder.itemView.context)
-        }*/
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = items.size
