@@ -8,19 +8,18 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sonyei888.onlineshopshoes.model.BrandModel
-import com.sonyei888.onlineshopshoes.model.ItemModel
+import com.sonyei888.onlineshopshoes.model.ItemsModel
 import com.sonyei888.onlineshopshoes.model.SliderModel
-import java.sql.Ref
 
 class MainViewModel():ViewModel() {
     private val firebaseDatabase= FirebaseDatabase.getInstance()
 
     private val _banner=MutableLiveData<List<SliderModel>>()
     private val _brand = MutableLiveData<MutableList<BrandModel>>()
-    private val _popular = MutableLiveData<MutableList<ItemModel>>()
+    private val _popular = MutableLiveData<MutableList<ItemsModel>>()
 
     val banners: LiveData<List<SliderModel>> = _banner
-    val popular: LiveData<MutableList<ItemModel>> = _popular
+    val popular: LiveData<MutableList<ItemsModel>> = _popular
     val brands: LiveData<MutableList<BrandModel>> = _brand
 
     fun loadBanners(){
@@ -64,9 +63,9 @@ class MainViewModel():ViewModel() {
         val Ref = firebaseDatabase.getReference("Items")
         Ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val lists = mutableListOf<ItemModel>()
+                val lists = mutableListOf<ItemsModel>()
                 for (childSnapshot in snapshot.children){
-                    val list = childSnapshot.getValue(ItemModel::class.java)
+                    val list = childSnapshot.getValue(ItemsModel::class.java)
                     if (list != null){
                         lists.add(list)
                     }
