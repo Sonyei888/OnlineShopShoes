@@ -1,5 +1,6 @@
 package com.sonyei888.onlineshopshoes.Adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.sonyei888.onlineshopshoes.Helper.ChangeNumberItemsListener
-import com.sonyei888.onlineshopshoes.Helper.ManagmentCart
+import com.sonyei888.onlineshopshoes.Helper.ManagementCart
 import com.sonyei888.onlineshopshoes.databinding.ViewholderCartBinding
 import com.sonyei888.onlineshopshoes.model.ItemsModel
 
@@ -21,7 +22,7 @@ class CartAdapter(
 
     }
 
-    private val managementCart = ManagmentCart(context)
+    private val managementCart = ManagementCart(context)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
         val binding =
             ViewholderCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -45,11 +46,11 @@ class CartAdapter(
         holder.binding.plusCartBtn.setOnClickListener {
             managementCart.plusItem(listItemSelected,
                 position, object : ChangeNumberItemsListener {
-                override fun onChanged() {
-                    notifyDataSetChanged()
-                    chargeNumberItemsListener?.onChanged()
-                }
-            })
+                    override fun onChanged() {
+                        notifyDataSetChanged()
+                        chargeNumberItemsListener?.onChanged()
+                    }
+                })
         }
         holder.binding.minusCartBtn.setOnClickListener {
             managementCart.minusItem(

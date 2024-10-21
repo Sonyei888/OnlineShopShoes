@@ -7,6 +7,7 @@ import com.sonyei888.onlineshopshoes.databinding.ActivityIntroBinding
 class IntroActivity : BaseActivity() {
 
     private lateinit var binding: ActivityIntroBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIntroBinding.inflate(layoutInflater)
